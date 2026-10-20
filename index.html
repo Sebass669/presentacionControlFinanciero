@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Control Financiero · App de finanzas personales sin internet</title>
+  <meta name="description" content="Dos apps de finanzas personales en un solo archivo HTML. Funcionan sin internet, tus datos viven solo en tu teléfono. Versión sencilla y versión detallada.">
+  <meta property="og:title" content="Control Financiero · Tu plata clara, en un solo archivo">
+  <meta property="og:description" content="Ingresos, gastos, metas y reportes. Sin internet, sin cuentas, privado en tu dispositivo.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#e9dfc9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='11' fill='%23b2443a'/%3E%3Cg fill='none' stroke='%23faf6ec' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 29V17'/%3E%3Cpath d='M20 21c0-3.2 2.6-5.4 6-5.2.2 3.4-2.4 5.6-6 5.2z'/%3E%3Cpath d='M20 19c0-3-2.4-5-5.4-4.8-.2 3.2 2.2 5.2 5.4 4.8z'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV (isla flotante) ============ -->
+  <div class="nav-wrap" id="top">
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Control Financiero — inicio">
+        <span class="seal seal-sm" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="30" height="30">
+            <rect x="2" y="2" width="36" height="36" rx="11" fill="var(--terra)"></rect>
+            <g fill="none" stroke="#faf6ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 29V17"></path>
+              <path d="M20 21c0-3.2 2.6-5.4 6-5.2.2 3.4-2.4 5.6-6 5.2z"></path>
+              <path d="M20 19c0-3-2.4-5-5.4-4.8-.2 3.2 2.2 5.2 5.4 4.8z"></path>
+            </g>
+          </svg>
+        </span>
+        <span class="brand-word">Control Financiero</span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#versiones">Versiones</a>
+        <a href="#como">Cómo funciona</a>
+        <a href="#preguntas">Preguntas</a>
+        <a class="btn btn-ink btn-sm" href="#versiones">
+          <span>Conseguir la app</span>
+          <span class="btn-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+        </a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+  </div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-text reveal">
+        <span class="eyebrow">App de finanzas · sin internet</span>
+        <h1 class="display">Tu plata, <em>clara.</em><br>En un solo archivo.</h1>
+        <p class="lead">Registrá ingresos y gastos, poné metas y mirá a dónde se va tu dinero. Todo vive en tu teléfono, sin cuentas ni conexión.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#versiones">
+            <span>Ver las dos versiones</span>
+            <span class="btn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+          <a class="btn btn-ghost" href="#como">Cómo funciona</a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>2</strong><span>versiones</span></li>
+          <li><strong>0</strong><span>cuentas · sin internet</span></li>
+          <li><strong>100%</strong><span>tuyo, en tu dispositivo</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-poster reveal">
+        <div class="poster">
+          <span class="poster-vlabel" aria-hidden="true">Finanzas · 2026</span>
+          <svg class="ink ink-sprig poster-sprig" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="currentColor">
+              <path d="M138 20c-22 2-40 14-52 32 20 1 40-11 52-32z"/>
+              <path d="M120 44c-20-3-38 5-50 21 19 5 39-3 50-21z"/>
+              <path d="M112 70c-21 1-38 12-48 30 20 2 39-10 48-30z"/>
+              <path d="M96 96c-19-3-37 6-48 22 19 4 38-4 48-22z"/>
+            </g>
+            <path d="M34 150C54 118 92 70 142 22" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+          </svg>
+          <div class="phone phone-lg">
+            <img src="img/app-sencilla.jpg" width="375" height="812" alt="Pantalla de la app mostrando el saldo del mes, ingresos y gastos">
+          </div>
+          <span class="poster-stamp seal" aria-hidden="true">
+            <span class="poster-stamp-txt">100%<br><small>tuyo</small></span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Sin internet</span><i>✦</i><span>Privado</span><i>✦</i><span>Claro y oscuro</span><i>✦</i><span>Español e inglés</span><i>✦</i><span>Un solo archivo</span><i>✦</i>
+        <span>Sin internet</span><i>✦</i><span>Privado</span><i>✦</i><span>Claro y oscuro</span><i>✦</i><span>Español e inglés</span><i>✦</i><span>Un solo archivo</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ FEATURES (bento kraft) ============ -->
+    <section class="section features-sec">
+      <header class="section-head reveal">
+        <span class="eyebrow">Por qué es distinta</span>
+        <h2 class="display-2">Hecha para durar en tu teléfono, no en la nube.</h2>
+      </header>
+      <div class="features">
+        <article class="tile reveal">
+          <span class="tile-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M12 12l4-2"/><circle cx="12" cy="12" r="1.3"/><path d="M4 19h16"/></svg>
+          </span>
+          <h3>Funciona sin internet</h3>
+          <p class="tile-cap">Offline</p>
+          <p>Abrís el archivo y listo. En el bus, en el campo o en modo avión, siempre responde.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          </span>
+          <h3>Privado de verdad</h3>
+          <p class="tile-cap">Private</p>
+          <p>Tus montos no viajan a ningún servidor. Viven solo en el navegador de tu dispositivo.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+          </span>
+          <h3>Claro y oscuro</h3>
+          <p class="tile-cap">Light &amp; Dark</p>
+          <p>Se adapta al tema de tu teléfono y se ve bien a cualquier hora, de día o de noche.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </span>
+          <h3>Español e inglés</h3>
+          <p class="tile-cap">ES · EN</p>
+          <p>Cambiás el idioma y toda la app se traduce al instante. Y elegís tu moneda.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4m0 0L8 8m4-4 4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+          </span>
+          <h3>Exportás e importás</h3>
+          <p class="tile-cap">Backup</p>
+          <p>Un respaldo en un archivo. Cambiás de teléfono y seguís con tus datos intactos.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="tile-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>
+          </span>
+          <h3>Un solo archivo</h3>
+          <p class="tile-cap">One file</p>
+          <p>Nada que instalar. Es un HTML que abrís en cualquier navegador del celular o la compu.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ VERSIONES ============ -->
+    <section class="section versions-sec" id="versiones">
+      <header class="section-head reveal">
+        <span class="eyebrow">Elegí tu versión</span>
+        <h2 class="display-2">Dos maneras de tomar el control.</h2>
+        <p class="section-sub">Empezá simple y subí de nivel cuando quieras. Lo que exportás de la sencilla se importa en la detallada sin perder nada.</p>
+      </header>
+
+      <div class="versions">
+        <article class="version reveal">
+          <div class="version-info">
+            <p class="tag"><b>Sencilla</b><span>Basic</span></p>
+            <h3 class="version-title">Lo esencial, sin ruido.</h3>
+            <p class="version-desc">Para empezar hoy mismo a saber cuánto entra, cuánto sale y con qué te quedás cada mes.</p>
+            <ul class="ticks">
+              <li>Ingresos y gastos por categoría</li>
+              <li>Saldo del mes y navegación por meses</li>
+              <li>Gráfico de dona de gastos</li>
+              <li>Respaldo: exportar e importar</li>
+            </ul>
+            <p class="version-for">Ideal para quien quiere orden sin complicarse.</p>
+          </div>
+          <div class="version-shot">
+            <div class="phone">
+              <img src="img/app-sencilla.jpg" width="375" height="812" alt="Versión sencilla: saldo del mes, ingresos y gastos">
+            </div>
+          </div>
+        </article>
+
+        <article class="version version-pro reveal">
+          <svg class="ink ink-sprig version-sprig" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="currentColor">
+              <path d="M138 20c-22 2-40 14-52 32 20 1 40-11 52-32z"/>
+              <path d="M120 44c-20-3-38 5-50 21 19 5 39-3 50-21z"/>
+              <path d="M112 70c-21 1-38 12-48 30 20 2 39-10 48-30z"/>
+            </g>
+            <path d="M48 120C64 92 96 58 142 22" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+          </svg>
+          <div class="version-info">
+            <p class="tag tag-pro"><b>Detallada</b><span>Pro</span></p>
+            <h3 class="version-title">Todo lo anterior, con superpoderes.</h3>
+            <p class="version-desc">Suma pagos recurrentes, metas de ahorro, presupuesto por categoría y reportes mes a mes.</p>
+            <ul class="ticks">
+              <li>Pagos recurrentes y aviso de próximos cobros</li>
+              <li>Metas de ahorro con progreso</li>
+              <li>Presupuesto por categoría</li>
+              <li>Reportes de los últimos 6 meses</li>
+            </ul>
+            <p class="version-for">Para quien ya lleva sus cuentas y quiere planificar.</p>
+          </div>
+          <div class="version-shot version-shot-duo">
+            <div class="phone phone-back">
+              <img src="img/app-reportes.jpg" width="375" height="812" alt="Reportes de los últimos 6 meses con gráfico de barras">
+            </div>
+            <div class="phone phone-front">
+              <img src="img/app-detallada.jpg" width="375" height="812" alt="Versión detallada: aviso de próximos cobros y saldo del mes">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO FUNCIONA (medallones) ============ -->
+    <section class="section how-sec" id="como">
+      <header class="section-head section-head-center reveal">
+        <span class="eyebrow">De la compra al primer gasto</span>
+        <h2 class="display-2">Cómo funciona</h2>
+      </header>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="medallion"><span class="medallion-num">01</span></span>
+          <h3>La conseguís</h3>
+          <p class="step-cap">Get it</p>
+          <p>Comprás en Hotmarket y te llega al correo tu enlace único con el archivo de la app.</p>
+        </li>
+        <li class="step reveal">
+          <span class="medallion"><span class="medallion-num">02</span></span>
+          <h3>La abrís</h3>
+          <p class="step-cap">Open</p>
+          <p>Un toque y se abre en el navegador. Agregala a la pantalla de inicio y queda como una app más.</p>
+        </li>
+        <li class="step reveal">
+          <span class="medallion"><span class="medallion-num">03</span></span>
+          <h3>La usás</h3>
+          <p class="step-cap">Track</p>
+          <p>Anotás tu primer ingreso o gasto. Desde ahí todo queda guardado en tu teléfono, listo siempre.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PROMESA (banda verde oliva) ============ -->
+    <section class="promise">
+      <svg class="ink ink-sprig promise-sprig promise-sprig-l" viewBox="0 0 160 160" aria-hidden="true">
+        <g fill="currentColor">
+          <path d="M22 140c22-2 40-14 52-32-20-1-40 11-52 32z"/>
+          <path d="M40 116c20 3 38-5 50-21-19-5-39 3-50 21z"/>
+          <path d="M48 90c21-1 38-12 48-30-20-2-39 10-48 30z"/>
+        </g>
+        <path d="M126 138C110 106 74 60 24 14" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <div class="promise-inner reveal">
+        <span class="seal promise-seal" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="40" height="40">
+            <rect x="2" y="2" width="36" height="36" rx="11" fill="var(--terra)"></rect>
+            <g fill="none" stroke="#faf6ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 29V17"></path>
+              <path d="M20 21c0-3.2 2.6-5.4 6-5.2.2 3.4-2.4 5.6-6 5.2z"></path>
+              <path d="M20 19c0-3-2.4-5-5.4-4.8-.2 3.2 2.2 5.2 5.4 4.8z"></path>
+            </g>
+          </svg>
+        </span>
+        <h2 class="display-2">Tus datos nunca salen de tu teléfono.</h2>
+        <p>Sin registros, sin seguimiento, sin publicidad. La app es tuya y lo que anotás también.</p>
+        <ul class="promise-stats">
+          <li><strong>0</strong><span>cuentas que crear</span></li>
+          <li><strong>0</strong><span>datos en la nube</span></li>
+          <li><strong>100%</strong><span>bajo tu control</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PREGUNTAS ============ -->
+    <section class="section faq-sec" id="preguntas">
+      <header class="section-head reveal">
+        <span class="eyebrow">¿Dudas?</span>
+        <h2 class="display-2">Preguntas frecuentes</h2>
+      </header>
+      <div class="faq reveal">
+        <details>
+          <summary>¿Necesito internet para usarla?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><p>No. Una vez que tenés el archivo, la app funciona completa sin conexión. Podés abrirla en modo avión y sigue respondiendo igual.</p></div>
+        </details>
+        <details>
+          <summary>¿Dónde se guardan mis datos?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><p>Solo en el navegador de tu dispositivo. No viajan a ningún servidor ni a la nube. Por eso conviene hacer respaldos: la app te avisa cada cierto tiempo.</p></div>
+        </details>
+        <details>
+          <summary>¿Puedo pasar de la sencilla a la detallada?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><p>Sí. Exportás tu respaldo desde la sencilla y lo importás en la detallada sin perder nada; tus movimientos se mantienen y se suman las funciones nuevas.</p></div>
+        </details>
+        <details>
+          <summary>¿Funciona en iPhone y Android?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><p>En ambos, y también en computadora. Solo necesitás un navegador. Podés agregarla a la pantalla de inicio para abrirla como una app.</p></div>
+        </details>
+        <details>
+          <summary>¿Qué pasa si cambio de teléfono?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><p>Exportás tu respaldo en el teléfono viejo e importás ese archivo en el nuevo. Tus datos quedan idénticos.</p></div>
+        </details>
+        <details>
+          <summary>¿Puedo usar mi propia moneda?<span class="faq-plus" aria-hidden="true"></span></summary>
+          <div class="faq-body"><p>Sí. Elegís la moneda desde Ajustes y los montos se muestran con su símbolo. Cambiar la moneda no convierte las cantidades, solo cambia cómo se ven.</p></div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a class="brand" href="#top">
+        <span class="seal seal-sm" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="28" height="28">
+            <rect x="2" y="2" width="36" height="36" rx="11" fill="var(--terra)"></rect>
+            <g fill="none" stroke="#faf6ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 29V17"></path>
+              <path d="M20 21c0-3.2 2.6-5.4 6-5.2.2 3.4-2.4 5.6-6 5.2z"></path>
+              <path d="M20 19c0-3-2.4-5-5.4-4.8-.2 3.2 2.2 5.2 5.4 4.8z"></path>
+            </g>
+          </svg>
+        </span>
+        <span class="brand-word">Control Financiero</span>
+      </a>
+      <nav class="footer-links" aria-label="Pie">
+        <a href="#versiones">Versiones</a>
+        <a href="#como">Cómo funciona</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+    </div>
+    <p class="footer-fine">Finanzas personales en un solo archivo · Sin internet · Privado en tu dispositivo</p>
+    <p class="footer-fine muted">© <span id="year">2026</span> Control Financiero</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
