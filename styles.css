@@ -313,6 +313,8 @@ main, .nav-wrap, .footer, .promise { position: relative; z-index: 1; }
 .version-pro .ticks li::before { background: rgba(159,197,143,0.22); }
 .version-pro .ticks li::after { border-color: #9fc58f; }
 .version-for { font-size: 0.92rem; color: var(--muted); margin: 0; }
+.version-buy { margin-top: 22px; }
+@media (max-width: 520px) { .version-buy { width: 100%; justify-content: center; } }
 .version-info { position: relative; z-index: 2; }
 .version-shot { position: relative; z-index: 2; display: flex; justify-content: center; }
 .version-shot-duo { min-height: 380px; align-items: center; }
